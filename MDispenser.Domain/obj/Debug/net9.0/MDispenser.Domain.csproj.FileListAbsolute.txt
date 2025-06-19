@@ -1,0 +1,12 @@
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\bin\Debug\net9.0\MDispenser.Domain.deps.json
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\bin\Debug\net9.0\MDispenser.Domain.dll
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\bin\Debug\net9.0\MDispenser.Domain.pdb
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.AssemblyInfoInputs.cache
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.AssemblyInfo.cs
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.csproj.CoreCompileInputs.cache
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.sourcelink.json
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.dll
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\refint\MDispenser.Domain.dll
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\MDispenser.Domain.pdb
+C:\Users\milto\Source\Repos\MDispenser\MDispenser.Domain\obj\Debug\net9.0\ref\MDispenser.Domain.dll

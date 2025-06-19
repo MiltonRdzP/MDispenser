@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDispenser.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5fff7a7e6af455cec99acff6f71ed1b2f447c77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d986a037809b53dc63bb94a5373d2d133269487a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDispenser.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDispenser.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
