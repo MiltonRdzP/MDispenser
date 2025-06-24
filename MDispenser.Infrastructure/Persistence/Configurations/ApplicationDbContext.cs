@@ -7,19 +7,30 @@ namespace MDispenser.Infrastructure.Persistence.Configurations
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Dispenser> Dispensers => Set<Dispenser>();
-        public DbSet<User> Users => Set<User>();
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Home> Homes { get; set; }
+        public DbSet<UserHomeAccess> UserHomeAccesses { get; set; }
+        public DbSet<Device> Devices { get; set; }
+        public DbSet<DeviceEvent> DeviceEvents { get; set; }
+
+        public DbSet<DeviceType> DeviceTypes { get; set; }
+        public DbSet<DeviceAction> DeviceActions { get; set; }
+        public DbSet<DispenseLog> DispenseLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Dispenser>(entity =>
-            {
-                entity.HasKey(d => d.Id);
-                entity.Property(d => d.Name).IsRequired();
-                entity.Property(d => d.LastDispenseTime).IsRequired();
-            });
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new HomeConfiguration());
+            modelBuilder.ApplyConfiguration(new UserHomeAccessConfiguration());
+            modelBuilder.ApplyConfiguration(new DeviceConfiguration());
+            modelBuilder.ApplyConfiguration(new DeviceEventConfiguration());
+            modelBuilder.ApplyConfiguration(new DeviceActionConfiguration());
+            modelBuilder.ApplyConfiguration(new DeviceTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DispenseLogConfiguration());
         }
     }
 }

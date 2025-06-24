@@ -20,4 +20,15 @@ public class User
         IsActive = true;
         CreatedAt = DateTime.UtcNow;
     }
+
+    public ICollection<UserHomeAccess> HomeAccesses { get; private set; } = new List<UserHomeAccess>();
+    public ICollection<DeviceEvent> DeviceEvents { get; private set; } = new List<DeviceEvent>();
+
+    public User(string username, string email, string passwordHash)
+    {
+        Username = username ?? throw new ArgumentNullException(nameof(username));
+        Email = email ?? throw new ArgumentNullException(nameof(email));
+        PasswordHash = passwordHash ?? throw new ArgumentNullException(nameof(passwordHash));
+    }
+
 }

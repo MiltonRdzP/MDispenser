@@ -9,7 +9,7 @@ public static class ApplicationServiceRegistration
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddScoped<IDispenserService, DispenserService>();
+        services.AddScoped<IDeviceService, DeviceService>();
         services.AddScoped<IUserService, UserService>();
 
         return services;

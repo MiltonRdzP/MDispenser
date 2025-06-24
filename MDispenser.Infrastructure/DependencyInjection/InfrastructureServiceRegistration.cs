@@ -19,7 +19,7 @@ namespace MDispenser.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseNpgsql(connectionString));
 
-            services.AddScoped<IDispenserRepository, DispenserRepository>();
+            services.AddScoped<IDeviceRepository, DeviceRepository>();
             services.AddScoped<ITimeProvider, TimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
 

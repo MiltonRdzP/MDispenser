@@ -9,6 +9,10 @@
     <ProjectReference Include="..\MDispenser.Shared\MDispenser.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Dispensers\Commands\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
