@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Dispenser/{id}": {
+    "/api/Device/{id}": {
       "get": {
         "tags": [
-          "Dispenser"
+          "Device"
         ],
         "parameters": [
           {
@@ -16,8 +16,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -27,28 +27,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/DispenserDto"
+                  "$ref": "#/components/schemas/DeviceDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DispenserDto"
+                  "$ref": "#/components/schemas/DeviceDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DispenserDto"
+                  "$ref": "#/components/schemas/DeviceDto"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/api/Dispenser/{id}/dispense": {
-      "post": {
+      },
+      "put": {
         "tags": [
-          "Dispenser"
+          "Device"
         ],
         "parameters": [
           {
@@ -56,11 +54,141 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Device"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Device/{id}/dispense": {
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Device": {
+      "get": {
+        "tags": [
+          "Device"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeviceDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeviceDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DeviceDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeviceDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -102,18 +230,57 @@
   },
   "components": {
     "schemas": {
-      "DispenserDto": {
+      "DeviceDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
+          "deviceId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "name": {
+          "homeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "deviceName": {
             "type": "string",
             "nullable": true
           },
-          "lastDispenseTime": {
+          "deviceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "manufacturer": {
+            "type": "string",
+            "nullable": true
+          },
+          "model": {
+            "type": "string",
+            "nullable": true
+          },
+          "serialNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "macAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "firmwareVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
             "type": "string",
             "format": "date-time"
           }

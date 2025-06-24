@@ -1,21 +1,15 @@
 [
   {
-    "ContainingType": "MDispenser.API.Controllers.DispenserController",
-    "Method": "GetDispenser",
-    "RelativePath": "api/Dispenser/{id}",
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
+    "Method": "GetAllDevices",
+    "RelativePath": "api/Device",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "MDispenser.Application.DTOs.DispenserDto",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MDispenser.Application.DTOs.DeviceDto, MDispenser.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -26,16 +20,95 @@
     ]
   },
   {
-    "ContainingType": "MDispenser.API.Controllers.DispenserController",
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
+    "Method": "CreateDevice",
+    "RelativePath": "api/Device",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deviceDto",
+        "Type": "MDispenser.Application.DTOs.DeviceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
+    "Method": "GetDevice",
+    "RelativePath": "api/Device/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MDispenser.Application.DTOs.DeviceDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
+    "Method": "UpdateDevice",
+    "RelativePath": "api/Device/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "deviceDto",
+        "Type": "MDispenser.Application.DTOs.DeviceDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
+    "Method": "DeleteDevice",
+    "RelativePath": "api/Device/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MDispenser.API.Controllers.DeviceController",
     "Method": "Dispense",
-    "RelativePath": "api/Dispenser/{id}/dispense",
+    "RelativePath": "api/Device/{id}/dispense",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Guid",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
